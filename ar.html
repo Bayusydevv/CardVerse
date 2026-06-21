@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>AR Viewer | CardVerse</title>
+  
+  <!-- MindAR & Three.js Libraries from CDN -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.147.0/examples/jsm/",
+        "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+      }
+    }
+  </script>
+  <script type="module">
+    import * as THREE from 'three';
+    import { MindARThree } from 'mindar-image-three';
+    window.THREE = THREE;
+    window.MINDAR = { IMAGE: { MindARThree: MindARThree } };
+  </script>
+
+  <!-- Project Assets -->
+  <link rel="stylesheet" href="css/ar.css" />
+  <script src="js/config.js" defer></script>
+  <script src="js/overlay-ui.js" defer></script>
+  <script src="js/ar-main.js" defer></script>
+</head>
+<body>
+
+  <!-- AR Container for Video & Canvas -->
+  <div id="ar-container"></div>
+
+  <!-- UI Overlay Layer -->
+  <div id="ar-ui-overlay">
+    
+    <!-- Top Bar -->
+    <div class="ar-top-bar">
+      <button id="btn-back" class="btn-back">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Kembali
+      </button>
+    </div>
+
+    <!-- Scanning Frame -->
+    <div id="scan-frame">
+      <div></div>
+    </div>
+    <div id="scan-hint" class="scan-hint" style="display: none;">Arahkan ke Kartu Nama</div>
+
+    <!-- UI State Layers -->
+    <!-- 1. LOADING -->
+    <div id="state-loading" class="ar-state-layer active">
+      <div class="spinner"></div>
+      <div class="loading-text">Menyiapkan AR...</div>
+    </div>
+
+    <!-- 2. PERMISSION DENIED -->
+    <div id="state-permission_denied" class="ar-state-layer">
+      <svg class="error-icon" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+        <line x1="4" y1="4" x2="20" y2="20"/>
+      </svg>
+      <div class="error-title">Akses Kamera Ditolak</div>
+      <div class="error-desc">CardVerse memerlukan izin kamera untuk fitur Augmented Reality.</div>
+      <button id="btn-retry" class="btn-ar-primary">Coba Lagi</button>
+      <a href="index.html" class="btn-ar-secondary">Kembali ke Beranda</a>
+    </div>
+
+    <!-- 3. SCANNING & DETECTED & LOST -->
+    <!-- Managed via JS displaying scan-frame and hiding state layers -->
+
+  </div>
+
+</body>
+</html>
