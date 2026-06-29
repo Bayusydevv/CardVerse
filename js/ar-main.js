@@ -107,7 +107,7 @@ async function initAR() {
     arSystem = new window.MINDAR.IMAGE.MindARThree({
       container: document.getElementById('ar-container'),
       imageTargetSrc: CARDVERSE_CONFIG.targetsPath,
-      maxTrack: 3,
+      maxTrack: 4,
       uiLoading: 'no',   // We handle our own UI
       uiScanning: 'no',
       uiError: 'no',
@@ -192,7 +192,7 @@ function showTargetsMissingUI() {
         </div>
         <div class="ar-missing-step">
           <span class="step-num">2</span>
-          <span>Upload 3 foto kartu nama Anda</span>
+          <span>Upload 4 foto kartu nama Anda</span>
         </div>
         <div class="ar-missing-step">
           <span class="step-num">3</span>

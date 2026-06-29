@@ -4,7 +4,7 @@ CardVerse adalah aplikasi web Augmented Reality (AR) berbasis *Image Tracking* u
 
 ## 🚀 Fitur Utama
 - **Web-Based AR**: Akses langsung melalui browser tanpa instalasi aplikasi tambahan.
-- **Multi-Target Tracking**: Mendukung 3 kartu nama unik sekaligus.
+- **Multi-Target Tracking**: Mendukung 4 kartu nama unik sekaligus.
 - **Glassmorphism Design**: Tampilan antarmuka modern dengan *dark theme* dan *glowing effects*.
 - **Interactive Overlay**: Panel sosial media yang muncul secara interaktif saat kartu dideteksi.
 
@@ -14,13 +14,14 @@ CardVerse adalah aplikasi web Augmented Reality (AR) berbasis *Image Tracking* u
 
 Agar AR dapat berjalan, sistem memerlukan file referensi pola (marker). Anda perlu men-generate file `targets.mind` menggunakan MindAR Compiler.
 
-1. Siapkan 3 foto/gambar desain kartu nama dalam format `.jpg` atau `.png`.
+1. Siapkan 4 foto/gambar desain kartu nama dalam format `.jpg` atau `.png`.
    - **Penting:** Urutan gambar akan menentukan siapa yang dideteksi!
      - Gambar ke-1 (Index 0): Agustian Putra Sukarya
      - Gambar ke-2 (Index 1): Bayu Syabana
      - Gambar ke-3 (Index 2): Sayyid Abdurrasyad
+     - Gambar ke-4 (Index 3): Achmad Rizal
 2. Buka **[MindAR Image Compiler](https://hiukim.github.io/mind-ar-js-doc/tools/compile)** di browser Anda.
-3. Klik tombol **Drop images here or click to select**, lalu pilih ketiga gambar kartu nama tersebut (pastikan urutannya benar sesuai poin 1).
+3. Klik tombol **Drop images here or click to select**, lalu pilih keempat gambar kartu nama tersebut (pastikan urutannya benar sesuai poin 1).
 4. Klik tombol **Start**.
 5. Tunggu proses kompilasi selesai (mungkin memakan waktu beberapa saat).
 6. Setelah selesai, klik **Download** untuk mengunduh file hasil kompilasi.
@@ -83,7 +84,7 @@ CardVerse/
 │   ├── style.css       # Global styles & Landing Page
 │   └── ar.css          # AR Viewer specific UI styles
 ├── js/
-│   ├── config.js       # Data konfigurasi 3 user dan tema
+│   ├── config.js       # Data konfigurasi 4 user dan tema
 │   ├── landing.js      # Animasi, canvas avatar generator untuk Landing Page
 │   ├── overlay-ui.js   # Script untuk membangun AR panel & Name Card 3D Canvas
 │   └── ar-main.js      # MindAR & Three.js initialization, logic AR states

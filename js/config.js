@@ -1,6 +1,6 @@
 /**
  * CardVerse - User Configuration Data
- * Define all 3 business card users here.
+ * Define all 4 business card users here.
  */
 
 const CARDVERSE_CONFIG = {
@@ -14,7 +14,7 @@ const CARDVERSE_CONFIG = {
     brandGradient: 'linear-gradient(135deg, #7C3AED, #06B6D4)',
   },
 
-  // 3 users — index matches target image index in targets.mind
+  // 4 users — index matches target image index in targets.mind
   users: [
     {
       index: 0,
@@ -94,6 +94,30 @@ const CARDVERSE_CONFIG = {
           icon: 'wa',
         },
         linkedin: null, // No LinkedIn for this user
+      },
+    },
+    {
+      index: 3,
+      name: 'Achmad Rizal',
+      title: 'Mahasiswa Teknologi Informasi',
+      initial: 'A',
+      accent: '#10B981',
+      accentSecondary: '#3B82F6',
+      gradientFrom: '#10B981',
+      gradientTo: '#3B82F6',
+      avatarStyle: 'emerald-blue',
+      socials: {
+        instagram: {
+          url: 'https://instagram.com/afrizall_fvb',
+          label: '@afrizall_fvb',
+          icon: 'ig',
+        },
+        whatsapp: {
+          url: 'https://wa.me/6281232731622',
+          label: '+62 812-3273-1622',
+          icon: 'wa',
+        },
+        linkedin: null,
       },
     },
   ],
